@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Oblig1.DAL.Users>
+
+<h2>Index</h2>
+
+
+<table class="table table-hover">
+    <tr>
+        <th>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        
+            <th>
+                @Html.DisplayNameFor(model => model.Phonenr)
+            </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phonenr)
+                </td>
+            <td>
+                
+                @Html.ActionLink("Delete", "UserDelete", new { id = item.UserID}, new { @class = "btn btn-danger" })
+
+
+            </td>
+        </tr>
+    }
+</table>

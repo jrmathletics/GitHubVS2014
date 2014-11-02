@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Oblig1.DAL.Orders>
+
+<br/>
+<br/>
+<br/>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Orderid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orderprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Orderlines)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Orderid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orderprice)
+            </td>
+
+            <td>
+                <button type="button" class="btn btn-danger">
+
+                    @Html.ActionLink("Delete", "OrderDelete", new { id = item.Orderid})
+                </button>
+            </td>
+        </tr>
+    }
+</table>

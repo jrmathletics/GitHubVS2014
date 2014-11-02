@@ -1,0 +1,54 @@
+﻿@model Oblig1.Model.Item
+
+<br />
+<br />
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.itemname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.itemname)
+            @Html.ValidationMessageFor(model => model.itemname)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.itemprice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.itemname)
+            @Html.ValidationMessageFor(model => model.itemprice)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.itemtype)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.itemtype)
+            @Html.ValidationMessageFor(model => model.itemtype)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.currentstock)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.currentstock)
+            @Html.ValidationMessageFor(model => model.currentstock)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pictureURL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pictureURL)
+            @Html.ValidationMessageFor(model => model.pictureURL)
+        </div>
+
+        <br />
+        <input type="submit" name="RegisterItem" value="RegisterItem" class="btn btn-success"/>
+
+    </fieldset>
+}
